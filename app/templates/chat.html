@@ -3,7 +3,8 @@
     <head>
         <title>Chat App: {{ room }}</title>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
-        <script type="text/javascript" src="//cdn.socket.io/4.4.1/socket.io.min.js"></script>
+         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js" integrity="sha512-VJ6+sp2E5rFQk05caiXXzQd1wBABpjEj1r5kMiLmGAAgwPItw1YpqsCCBtq8Yr1x6C49/mTpRdXtq8O2RcZhlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script type="text/javascript" charset="utf-8">
             var socket;
             $(document).ready(function(){
@@ -19,7 +20,8 @@
                     $('#chat').val($('#chat').val() + data.msg + '\n');
                     $('#chat').scrollTop($('#chat')[0].scrollHeight);
                 });
-                $('#text').keypress(function(e) {
+                //<event for key pressing  function
+                 $('#text').keypress(function(e) {       
                     var code = e.keyCode || e.which;
                     if (code == 13) {
                         text = $('#text').val();
@@ -42,6 +44,6 @@
         <h1>Chat-App: {{ room }}</h1>
         <textarea id="chat" cols="80" rows="20"></textarea><br><br>
         <input id="text" size="80" placeholder="Enter your message here"><br><br>
-        <a href="#" onclick="leave_room();">Leave this room</a>
+        <a href="#" onclick="leave_room();">Leave room</a>
     </body>
 </html>
