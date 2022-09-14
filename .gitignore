@@ -45,6 +45,11 @@ coverage.xml
 # Rope
 .ropeproject
 
+#dbconfiguration
+app.config
+mydb
+passwd
+
 # Django stuff:
 *.log
 *.pot
